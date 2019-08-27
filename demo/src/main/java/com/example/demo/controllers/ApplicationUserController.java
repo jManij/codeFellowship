@@ -32,7 +32,7 @@ public class ApplicationUserController {
         applicationUserRepository.save(newUser);
         Authentication authentication = new UsernamePasswordAuthenticationToken(newUser, null, new ArrayList<>());
         SecurityContextHolder.getContext().setAuthentication(authentication);
-        return new RedirectView("/");
+        return new RedirectView("myprofile");
     }
 
     @PostMapping("/myprofile")
