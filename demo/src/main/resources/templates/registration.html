@@ -2,16 +2,47 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <title>Sign Up</title>
 </head>
-<body>
-<h1>Register as a new user</h1>
+<body style="background-color:'F7F7F6';">
+
+<!--<h1>Register as a new user</h1>-->
+<!--<form method="POST" action="/users">-->
+<!--    <label for="firstname">First name: </label><input name="firstname" id="firstname" />-->
+<!--    <label for="lastname">Last name: </label><input name="lastname" id="lastname" />-->
+<!--    <label for="username"> Username: </label><input name="username" id="username" />-->
+<!--    <label for="password">Password:</label><input type="password" name="password" id="password" />-->
+<!--    <input type="submit"/>-->
+<!--</form>-->
+<!--</body>-->
+<!--</html>-->
 <form method="POST" action="/users">
-    <label for="firstname">First name: </label><input name="firstname" id="firstname" />
-    <label for="lastname">Last name: </label><input name="lastname" id="lastname" />
-    <label for="username"> Username: </label><input name="username" id="username" />
-    <label for="password">Password:</label><input type="password" name="password" id="password" />
-    <input type="submit"/>
+<div style="background-color:#41aaa2; height:400px; width:400px; border-radius:30px; text-align:center;" class="col-md-offset-4">
+    <h1 style="text-align:center; padding-top:30px; color:#ffffff;">Register</h1>
+
+    <div class="col-sm-12" style="padding-top:10px;">
+        <input type="text" class="form-control" id="firstname" placeholder="First Name" name="firstname" style="border-radius:15px;">
+    </div>
+    <div class="col-sm-12" style="padding-top:10px;">
+        <input type="text" class="form-control" id="lastname" placeholder="Last Name" name="lastname" style="border-radius:15px;">
+    </div>
+    <div class="col-sm-12" style="padding-top:10px;">
+        <input type="username" class="form-control" id="username" placeholder="Enter username" name="username" style="border-radius:15px;">
+    </div>
+
+    <div class="col-sm-12" style="padding-top:10px;">
+        <input type="password" class="form-control" id="password" placeholder="Type your Password" name="password" style="border-radius:15px;">
+    </div>
+
+
+    <button class="col-md-4 col-md-offset-4 btn" style="background-color:#ffffff; color:#626a69; font-size:20px; margin-top:10px;" type="submit"> Submit
+    </button>
+</div>
+
 </form>
 </body>
 </html>
+

@@ -50,7 +50,7 @@ public class DemoApplicationTests {
 				.andDo(MockMvcResultHandlers.print())
 				.andExpect(MockMvcResultMatchers.status().is2xxSuccessful())
 				.andExpect(MockMvcResultMatchers.content().string(
-						org.hamcrest.Matchers.containsString("Register as a new user")));
+						org.hamcrest.Matchers.containsString("Register")));
 	}
 
 }
