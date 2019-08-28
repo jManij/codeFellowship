@@ -1,4 +1,4 @@
-# Lab 16: Spring Auth- Code FellowShip Profiles
+# Lab 16 & 17: Spring Auth- Code FellowShip Profiles
 # Advanced Java
 
 Table of Contents:
