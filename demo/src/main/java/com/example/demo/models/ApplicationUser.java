@@ -4,11 +4,9 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Collection;
+import java.util.List;
 
 @Entity
 public class ApplicationUser implements UserDetails {
@@ -21,6 +19,9 @@ public class ApplicationUser implements UserDetails {
     String password;
     String firstname;
     String lastname;
+
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "postOwner")
+    List<Post> posts;
 
     public ApplicationUser(String username, String password, String firstname, String lastname) {
         this.username = username;
@@ -36,7 +37,7 @@ public class ApplicationUser implements UserDetails {
     }
 
     public String getUsername() {
-        return username;
+        return this.username;
     }
 
     @Override
@@ -94,5 +95,29 @@ public class ApplicationUser implements UserDetails {
 
     public void setLastName(String lastname) {
         this.lastname = lastname;
+    }
+
+    public String getFirstname() {
+        return firstname;
+    }
+
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
+    }
+
+    public String getLastname() {
+        return lastname;
+    }
+
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
+    }
+
+    public List<Post> getPosts() {
+        return posts;
+    }
+
+    public void setPosts(List<Post> posts) {
+        this.posts = posts;
     }
 }
