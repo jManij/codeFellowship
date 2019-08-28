@@ -14,11 +14,7 @@ public class HomeController {
         return "root";
     }
 
-    @GetMapping("/myprofile")
-    public  String getUser(Principal p, Model m) {
-        m.addAttribute("user", p);
-        return "myprofile";
-    }
+
 
     @GetMapping("/signup")
     public  String getSignUpPage() {
