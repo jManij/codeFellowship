@@ -5,14 +5,14 @@
     <title>Welcome User Page</title>
 </head>
 <body>
-<div th:replace="fragments/nav :: nav"></div>
+<div th:insert="fragments/loggedNavBar :: nav"></div>
 <div th:if="${user}">
     <ul>
         <li th:each="post : ${user.Posts}" th:text="${post.getBody() + ' ' + post.getTimeStamp()}">
         </li>
     </ul>
     <form method="POST" th:action="${'/users/' + user.getId()}">
-        <input type="text" class="form-control" id="post" placeholder="post" name="post" style="border-radius:15px;">
+        <input type="text" class="form-control" id="post" placeholder="Add new post" name="post" style="border-radius:15px;">
         <input type="submit" placeholder="Add new post" name="Add"/>
     </form>
 </div>

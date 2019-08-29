@@ -19,15 +19,20 @@ public class ApplicationUser implements UserDetails {
     String password;
     String firstname;
     String lastname;
+    String bio;
+    String dob;
+
 
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "postOwner")
     List<Post> posts;
 
-    public ApplicationUser(String username, String password, String firstname, String lastname) {
+    public ApplicationUser(String username, String password, String firstname, String lastname, String bio, String dob) {
         this.username = username;
         this.password = password;
         this.firstname = firstname;
         this.lastname = lastname;
+        this.bio = bio;
+        this.dob = dob;
     }
 
     public ApplicationUser() {}
@@ -119,5 +124,21 @@ public class ApplicationUser implements UserDetails {
 
     public void setPosts(List<Post> posts) {
         this.posts = posts;
+    }
+
+    public String getBio() {
+        return bio;
+    }
+
+    public void setBio(String bio) {
+        this.bio = bio;
+    }
+
+    public String getDob() {
+        return dob;
+    }
+
+    public void setDob(String dob) {
+        this.dob = dob;
     }
 }

@@ -33,11 +33,11 @@ public class ApplicationUserController {
     PostRepository postRepository;
 
     @PostMapping("/users")
-    public RedirectView createUser(String firstname, String lastname, String username, String password) {
+    public RedirectView createUser(String firstname, String lastname, String username, String password, String bday, String bio) {
         System.out.println(firstname + " " + lastname + " " + username + " " + password);  //Testing
         ApplicationUser newUser = new ApplicationUser(username,
                 encoder.encode(password),
-                firstname, lastname);
+                firstname, lastname, bio, bday);
         applicationUserRepository.save(newUser);
         Authentication authentication = new UsernamePasswordAuthenticationToken(newUser, null, new ArrayList<>());
         SecurityContextHolder.getContext().setAuthentication(authentication);

@@ -9,18 +9,29 @@
 </head>
 <body style="background-color:#EDC7B7;">
 <form method="POST" action="/users">
-<div style="background-color:#123C69; height:400px; width:400px; border-radius:30px; text-align:center;" class="col-md-offset-4">
+<div style="background-color:#123C69; height:480px; width:400px; border-radius:30px; text-align:center;" class="col-md-offset-4">
     <h1 style="text-align:center; padding-top:30px; color:#ffffff;">Register</h1>
 
     <div class="col-sm-12" style="padding-top:10px;">
         <input type="text" class="form-control" id="firstname" placeholder="First Name" name="firstname" style="border-radius:15px;">
     </div>
+
     <div class="col-sm-12" style="padding-top:10px;">
         <input type="text" class="form-control" id="lastname" placeholder="Last Name" name="lastname" style="border-radius:15px;">
     </div>
+
+    <div class="col-sm-12" style="padding-top:10px;">
+        <textarea rows="4" cols="50" class= "form-control" id="bio" placeholder="Say something fun about you..." name="bio" style="border-radius:15px;"></textarea>
+    </div>
+
+    <div class="col-sm-12" style="padding-top:10px;">
+        <input type="date" class="form-control" id="bday" name="bday" placeholder="" style="border-radius:15px;">
+    </div>
+
     <div class="col-sm-12" style="padding-top:10px;">
         <input type="username" class="form-control" id="username" placeholder="Enter username" name="username" style="border-radius:15px;">
     </div>
+
 
     <div class="col-sm-12" style="padding-top:10px;">
         <input type="password" class="form-control" id="password" placeholder="Type your Password" name="password" style="border-radius:15px;">
