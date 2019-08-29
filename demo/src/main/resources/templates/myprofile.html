@@ -2,19 +2,34 @@
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="/static/profile.css">
     <title>Welcome User Page</title>
 </head>
 <body>
 <div th:insert="fragments/loggedNavBar :: nav"></div>
 <div th:if="${user}">
-    <ul>
-        <li th:each="post : ${user.Posts}" th:text="${post.getBody() + ' ' + post.getTimeStamp()}">
-        </li>
-    </ul>
+    <div class="card">
+        <img src="profile.png" alt="profile_pic" style="width:20%">
+        <div class="container">
+            <h4 th:text="${user.getFirstname()}"></h4>
+            <h4 th:text="${user.getBio()}"></h4>
+            <h4 th:text="${user.getDob()}"></h4>
+            <h5>All my Posts</h5>
+            <ul>
+                <li th:each="post : ${user.Posts}" th:text="${post.getBody() + ' ' + post.getTimeStamp()}">
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+
+
     <form method="POST" th:action="${'/users/' + user.getId()}">
         <input type="text" class="form-control" id="post" placeholder="Add new post" name="post" style="border-radius:15px;">
         <input type="submit" placeholder="Add new post" name="Add"/>
     </form>
+
 </div>
 
 
